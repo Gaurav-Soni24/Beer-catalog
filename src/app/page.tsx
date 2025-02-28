@@ -7,9 +7,9 @@ interface Beer {
   name: string;
   price: string;
   image: string;
-  rating: {
-    average: number;
-    reviews: number;
+  rating?: {
+    average?: number;
+    reviews?: number;
   };
 }
 
@@ -52,7 +52,7 @@ export default function BeerCatalog() {
             <h2 className="text-xl font-semibold">{beer.name}</h2>
             <p className="text-gray-700">{beer.price}</p>
             <p className="text-yellow-500 font-bold">
-              ⭐ {beer.rating.average.toFixed(1)} ({beer.rating.reviews} reviews)
+              ⭐ {beer.rating?.average ? beer.rating.average.toFixed(1) : "N/A"} ({beer.rating?.reviews || 0} reviews)
             </p>
           </div>
         ))}
