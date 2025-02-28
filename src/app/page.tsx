@@ -66,7 +66,7 @@ export default function BeerCatalog() {
           <input
             type="text"
             placeholder="Search for your favorite beer..."
-            className="w-full p-4 pl-10 pr-12 rounded-lg shadow-md bg-white border-2 border-amber-200 focus:border-amber-400 focus:outline-none focus:ring-2 focus:ring-amber-300 transition"
+            className="w-full p-4 pl-10 pr-12 rounded-lg shadow-md text-black bg-white border-2 border-amber-200 focus:border-amber-400 focus:outline-none focus:ring-2 focus:ring-amber-300 transition"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
           />
