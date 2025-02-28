@@ -1,15 +1,24 @@
-'use client'
-
 import { useState, useEffect } from "react";
 
+interface Beer {
+  id: number;
+  name: string;
+  price: string;
+  image: string;
+  rating: {
+    average: number;
+    reviews: number;
+  };
+}
+
 export default function BeerCatalog() {
-  const [beers, setBeers] = useState([]);
+  const [beers, setBeers] = useState<Beer[]>([]);
   const [search, setSearch] = useState("");
 
   useEffect(() => {
     fetch("https://api.sampleapis.com/beers/ale")
       .then((response) => response.json())
-      .then((data) => setBeers(data))
+      .then((data: Beer[]) => setBeers(data))
       .catch((error) => console.error("Error fetching data:", error));
   }, []);
 
